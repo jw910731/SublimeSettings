@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+#include <bits/stdc++.h>
+#ifdef ONLINE_JUDGE
+#define _ //ios_base::sync_with_stdio(0);cin.tie(0);
+#elif TEST
+#define _ printf("###TESTING###\n");
+#else
+#define _ 
+#endif
+using namespace std;
+/************************/
+
+
+void init(){
+	
+}
+int main(){ _
+	${1://Main Code}
+
+	return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>#</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+	<description>C++ Default Code</description>
+</snippet>

@@ -11,10 +11,6 @@
 using namespace std;
 /************************/
 
-
-void init(){
-	
-}
 int main(){ _
 	${1://Main Code}
 

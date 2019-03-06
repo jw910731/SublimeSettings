@@ -11,7 +11,7 @@
      [
          {   
             "name": "Run",
-            "shell_cmd": "g++ -Wall -Wextra -O2 -std=c++14 -fdiagnostics-color=auto \"${file}\" -o \"${file_path}/${file_base_name}.out\"&& chmod +x  \"${file_path}/${file_base_name}.out\"&&gnome-terminal -x \"${file_path}/${file_base_name}.out\"",
+            "shell_cmd": "g++ -Wall -Wextra -O2 -std=c++14 -fdiagnostics-color=auto \"${file}\" -o \"${file_path}/${file_base_name}.out\"&& chmod +x  \"${file_path}/${file_base_name}.out\"&&gnome-terminal --window-with-profile=code -x \"${file_path}/${file_base_name}.out\"",
             "osx":{
                 "shell_cmd": "g++-8 -Wall -Wextra -O2 -std=c++14 -fdiagnostics-color=auto \"${file}\" -o \"${file_path}/${file_base_name}.out\"&&chmod +x  \"${file_path}/${file_base_name}.out\"&&open \"${file_path}/${file_base_name}.out\" -a Terminal.app",
             },
@@ -19,12 +19,12 @@
                 "shell_cmd": "g++ -Wall -Wextra -O2 -std=c++14 -fdiagnostics-color=never \"${file}\" -o \"${file_path}/${file_base_name}.exe\";start \"${file_path}/${file_base_name}.exe\""
             },
             "linux":{
-                "shell_cmd": "g++ -Wall -Wextra -O2 -std=c++14 -fdiagnostics-color=auto \"${file}\" -o \"${file_path}/${file_base_name}.out\"&&chmod +x  \"${file_path}/${file_base_name}.out\"&&gnome-terminal -x \"${file_path}/${file_base_name}.out\"",
+                "shell_cmd": "g++ -Wall -Wextra -O2 -std=c++14 -fdiagnostics-color=auto \"${file}\" -o \"${file_path}/${file_base_name}.out\"&&chmod +x  \"${file_path}/${file_base_name}.out\"&&gnome-terminal --window-with-profile=code -x \"${file_path}/${file_base_name}.out\"",
             }
          },
          {   
             "name": "Test Run",
-            "shell_cmd": "g++ -DTEST -Wall -Wextra -O2 -std=c++14 -fdiagnostics-color=auto \"${file}\" -o \"${file_path}/${file_base_name}.out\"&&chmod +x  \"${file_path}/${file_base_name}.out\"&&gnome-terminal -x \"${file_path}/${file_base_name}.out\"",
+            "shell_cmd": "g++ -DTEST -Wall -Wextra -O2 -std=c++14 -fdiagnostics-color=auto \"${file}\" -o \"${file_path}/${file_base_name}.out\"&&chmod +x  \"${file_path}/${file_base_name}.out\"&&gnome-terminal --window-with-profile=code -x \"${file_path}/${file_base_name}.out\"",
             "osx":{
                 "shell_cmd": "g++-8 -DTEST -Wall -Wextra -O2 -std=c++14 -fdiagnostics-color=auto \"${file}\" -o \"${file_path}/${file_base_name}.out\"&&chmod +x  \"${file_path}/${file_base_name}.out\"&&open \"${file_path}/${file_base_name}.out\" -a Terminal.app",
             },
@@ -32,7 +32,7 @@
                 "shell_cmd": "g++ -DTEST -Wall -Wextra -O2 -std=c++14 -fdiagnostics-color=never \"${file}\" -o \"${file_path}/${file_base_name}.exe\";start \"${file_path}/${file_base_name}.exe\""
             },
             "linux":{
-                "shell_cmd": "g++ -DTEST -Wall -Wextra -O2 -std=c++14 -fdiagnostics-color=auto \"${file}\" -o \"${file_path}/${file_base_name}.out\"&&chmod +x  \"${file_path}/${file_base_name}.out\";gnome-terminal -x \"${file_path}/${file_base_name}.out\"",
+                "shell_cmd": "g++ -DTEST -Wall -Wextra -O2 -std=c++14 -fdiagnostics-color=auto \"${file}\" -o \"${file_path}/${file_base_name}.out\"&&chmod +x  \"${file_path}/${file_base_name}.out\";gnome-terminal --window-with-profile=code -x \"${file_path}/${file_base_name}.out\"",
             }
          }
      ]

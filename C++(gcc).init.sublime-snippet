@@ -2,7 +2,7 @@
 	<content><![CDATA[
 #include <bits/stdc++.h>
 #ifdef ONLINE_JUDGE
-#define _ //ios_base::sync_with_stdio(0);cin.tie(0);
+#define _ //std::ios::sync_with_stdio(0);std::cin.tie(0);
 #elif TEST
 #define _ printf("###TESTING###\n");
 #else

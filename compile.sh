@@ -1,17 +1,23 @@
 #!/bin/bash
 
-#$1 = platform
-#$2 = source
-#$3 = destination
-#$4 = mode
+#$1 = source
+#$2 = destination
+#$3 = mode
+
+#Set default compile flag
 args=('-Wall' '-Wextra' '-O2' '-std=c++14' '-fdiagnostics-color=auto' '-fno-diagnostics-show-option' '-fno-diagnostics-show-caret' '-Wno-unused-result')
-if [[ $4 -eq 'Test' ]];then
+#If option Test is destinate
+if [[ $3 -eq 'Test' ]];then
 	args+=('-DTEST')
 fi
-args+=($2 '-o' $3)
-cmd='g++'
-if [[ $1 -eq 'osx' ]];then
+#add source and ouput to compile flag
+args+=($1 '-o' $2)
+#If system is OSX => use gcc instead of clang
+if [[ $OSTYPE == 'darwin'* ]];then 
     cmd='g++-8'
+else
+	cmd='g++'
 fi
-command "g++" "${args[@]/#}"
+#Execute compile command
+command $cmd "${args[@]/#}"
 exit

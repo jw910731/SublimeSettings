@@ -5,7 +5,7 @@
 #$3 = mode
 
 #Set default compile flag
-args=('-Wall' '-Wextra' '-O2' '-std=c++14' '-fdiagnostics-color=auto' '-fno-diagnostics-show-option' '-fno-diagnostics-show-caret' '-Wno-unused-result')
+args=('-Wall' '-Wextra' '-std=c++14' '-fdiagnostics-color=auto' '-fno-diagnostics-show-option' '-fno-diagnostics-show-caret' '-Wno-unused-result')
 #If option Test is destinate
 if [[ $3 == "Test" ]];then
 	args+=('-DTEST')
@@ -16,9 +16,9 @@ if [[ $3 == "Run" || $3 == "Test" ]]; then
 	if [[ ! -d '/var/tmp/SublimeBuild' ]];then
 		mkdir /var/tmp/SublimeBuild
 	fi
-	args+=("/var/tmp/SublimeBuild/$(basename $2)")
+	args+=("/var/tmp/SublimeBuild/$(basename $2)" '-O2')
 else
-	args+=("$2")
+	args+=("$2" "-g")
 fi
 #If system is OSX => use gcc instead of clang
 if [[ $OSTYPE == 'darwin'* ]];then 

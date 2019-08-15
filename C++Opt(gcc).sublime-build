@@ -17,28 +17,28 @@
      [
          {   
             "name": "Run",
-            "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\"&&gnome-terminal -x \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"${file_path}/${file_base_name}.out\" > /dev/null 2>&1",
+            "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Run\"&&gnome-terminal -x \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"/var/tmp/SublimeBuild/${file_base_name}.out\" > /dev/null 2>&1",
             "osx":{
-                "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\"&& osascript -e 'tell application \"Finder\" to set yee to load script file (POSIX path of \"${packages}/User/SublimeSettings/apple_run.scpt\" as POSIX file)\ntell yee to openTerminal(\"${packages}\", \"${file_path}/${file_base_name}.out\") '",
+                "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Run\"&& osascript -e 'tell application \"Finder\" to set yee to load script file (POSIX path of \"${packages}/User/SublimeSettings/apple_run.scpt\" as POSIX file)\ntell yee to openTerminal(\"${packages}\", \"/var/tmp/SublimeBuild/${file_base_name}.out\") '",
             },
             "windows":{
                 "shell_cmd": "g++ -Wall -Wextra -O2 -std=c++14 -fdiagnostics-color=never -fno-diagnostics-show-option -fno-diagnostics-show-caret -Wno-unused-result \"${file}\" -o \"${file_path}/${file_base_name}.exe\";start \"${file_path}/${file_base_name}.exe\""
             },
             "linux":{
-                "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\"&&gnome-terminal -x \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"${file_path}/${file_base_name}.out\" > /dev/null 2>&1",
+                "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Run\"&&gnome-terminal -x \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"/var/tmp/SublimeBuild/${file_base_name}.out\" > /dev/null 2>&1",
             }
          },
          {   
             "name": "Test Run",
-            "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Test\"&&chmod +x  \"${file_path}/${file_base_name}.out\"&&gnome-terminal -x \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"${file_path}/${file_base_name}.out\" > /dev/null 2>&1",
+            "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Test\"&&gnome-terminal -x \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"/var/tmp/SublimeBuild/${file_base_name}.out\" > /dev/null 2>&1",
             "osx":{
-                "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Test\"&&chmod +x  \"${file_path}/${file_base_name}.out\"&& osascript -e 'tell application \"Finder\" to set yee to load script file (POSIX path of \"${packages}/User/SublimeSettings/apple_run.scpt\" as POSIX file)\ntell yee to openTerminal(\"${packages}\", \"${file_path}/${file_base_name}.out\") ' ",
+                "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Test\"&& osascript -e 'tell application \"Finder\" to set yee to load script file (POSIX path of \"${packages}/User/SublimeSettings/apple_run.scpt\" as POSIX file)\ntell yee to openTerminal(\"${packages}\", \"/var/tmp/SublimeBuild/${file_base_name}.out\") ' ",
             },
             "windows":{
                 "shell_cmd": "g++ -DTEST -Wall -Wextra -O2 -std=c++14 -fdiagnostics-color=never -fno-diagnostics-show-option -fno-diagnostics-show-caret -Wno-unused-result \"${file}\" -o \"${file_path}/${file_base_name}.exe\";start \"${file_path}/${file_base_name}.exe\""
             },
             "linux":{
-                "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Test\"&&chmod +x  \"${file_path}/${file_base_name}.out\"&&gnome-terminal -x \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"${file_path}/${file_base_name}.out\" > /dev/null 2>&1",
+                "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Test\"&&gnome-terminal -x \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"/var/tmp/SublimeBuild/${file_base_name}.out\" > /dev/null 2>&1",
             }
          }
      ]

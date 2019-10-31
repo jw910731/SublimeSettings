@@ -16,7 +16,8 @@ if [[ $3 == "Run" || $3 == "Test" ]]; then
 	if [[ ! -d '/var/tmp/SublimeBuild' ]];then
 		mkdir /var/tmp/SublimeBuild
 	fi
-	args+=("/var/tmp/SublimeBuild/$(basename $2)" '-O2')
+	file_name=$(basename "$2")
+	args+=("/var/tmp/SublimeBuild/$file_name" '-O2')
 else
 	args+=("$2" "-g")
 fi

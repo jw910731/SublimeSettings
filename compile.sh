@@ -5,10 +5,17 @@
 #$3 = mode
 
 #Set default compile flag
-args=('-Wall' '-Wextra' '-std=c++14' '-fdiagnostics-color=auto' '-fno-diagnostics-show-option' '-fno-diagnostics-show-caret' '-Wno-unused-result')
+args=('-Wall' '-Wextra' '-fdiagnostics-color=auto' '-fno-diagnostics-show-option' '-fno-diagnostics-show-caret' '-Wno-unused-result')
+dir_name=$(dirname "$2")
+#args+=("-I$dir_name")
 #If option Test is destinate
-if [[ $3 == "Test" ]];then
+if [[ $3 != "Run" ]];then
 	args+=('-DTEST')
+fi
+if [[ $3 == "c++17" ]]; then
+    args+=('-std=c++17')
+else
+    args+=('-std=c++14')
 fi
 #add source and ouput to compile flag
 args+=("$1" '-o')

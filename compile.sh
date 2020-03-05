@@ -18,6 +18,9 @@ else
     args+=('-std=c++14')
 fi
 #add source and ouput to compile flag
+if [ -z ${3+x} ];then 
+	args+=("-g")
+fi
 args+=("$1" '-o')
 if [[ $3 == "Run" || $3 == "Test" ]]; then
 	if [[ ! -d '/var/tmp/SublimeBuild' ]];then
@@ -26,7 +29,7 @@ if [[ $3 == "Run" || $3 == "Test" ]]; then
 	file_name=$(basename "$2")
 	args+=("/var/tmp/SublimeBuild/$file_name" '-O2')
 else
-	args+=("$2" "-g")
+	args+=("$2")
 fi
 #If system is OSX => use gcc instead of clang
 if [[ $OSTYPE == 'darwin'* ]];then 

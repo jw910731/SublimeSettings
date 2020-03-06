@@ -19,18 +19,22 @@ else
 fi
 #add source and ouput to compile flag
 if [ -z ${3+x} ];then 
-	args+=("-g")
+	args+=("-Og" "-g")
+else
+	args+=("-O2")
 fi
-args+=("$1" '-o')
-if [[ $3 == "Run" || $3 == "Test" ]]; then
+args+=('-o')
+if [[ ! -z ${3+x} ]]; then
 	if [[ ! -d '/var/tmp/SublimeBuild' ]];then
 		mkdir /var/tmp/SublimeBuild
 	fi
 	file_name=$(basename "$2")
-	args+=("/var/tmp/SublimeBuild/$file_name" '-O2')
+	args+=("/var/tmp/SublimeBuild/$file_name")
 else
 	args+=("$2")
 fi
+
+args+=("$1")
 #If system is OSX => use gcc instead of clang
 if [[ $OSTYPE == 'darwin'* ]];then 
 	# Use homebrew gcc to assert compile result

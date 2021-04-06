@@ -17,7 +17,7 @@
      [
          {   
             "name": "Run",
-            "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Run\"&&gnome-terminal -x \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"/var/tmp/SublimeBuild/${file_base_name}.out\" > /dev/null 2>&1",
+            "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Run\"&&\"${packages}/User/SublimeSettings/linux-terminal.sh\" \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"/var/tmp/SublimeBuild/${file_base_name}.out\"",
             "osx":{
                 "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Run\"&& osascript -e 'tell application \"Finder\" to set yee to load script file (POSIX path of \"${packages}/User/SublimeSettings/apple_run.scpt\" as POSIX file)\ntell yee to openTerminal(\"${packages}\", \"/var/tmp/SublimeBuild/${file_base_name}.out\") '",
             },
@@ -25,12 +25,12 @@
                 "shell_cmd": "\"${packages}/User/SublimeSettings/compile.bat\" \"${file}\" \"${file_path}\\\\${file_base_name}.exe\" && start call \"${packages}/User/SublimeSettings/launch-wrapper.bat\" \"${file_path}\\\\${file_base_name}.exe\""
             },
             "linux":{
-                "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Run\"&&gnome-terminal -x \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"/var/tmp/SublimeBuild/${file_base_name}.out\" > /dev/null 2>&1",
+                "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Run\"&&\"${packages}/User/SublimeSettings/linux-terminal.sh\" \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"/var/tmp/SublimeBuild/${file_base_name}.out\"",
             }
          },
          {   
             "name": "Test Run",
-            "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Test\"&&gnome-terminal -x \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"/var/tmp/SublimeBuild/${file_base_name}.out\" > /dev/null 2>&1",
+            "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Test\"&&\"${packages}/User/SublimeSettings/linux-terminal.sh\" \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"/var/tmp/SublimeBuild/${file_base_name}.out\"",
             "osx":{
                 "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Test\"&& osascript -e 'tell application \"Finder\" to set yee to load script file (POSIX path of \"${packages}/User/SublimeSettings/apple_run.scpt\" as POSIX file)\ntell yee to openTerminal(\"${packages}\", \"/var/tmp/SublimeBuild/${file_base_name}.out\") ' ",
             },
@@ -39,7 +39,7 @@
                 "shell_cmd": "echo Option Not Available Yet."
             },
             "linux":{
-                "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Test\"&&gnome-terminal -x \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"/var/tmp/SublimeBuild/${file_base_name}.out\" > /dev/null 2>&1",
+                "shell_cmd": "\"${packages}/User/SublimeSettings/compile.sh\" \"${file}\" \"${file_path}/${file_base_name}.out\" \"Test\"&&\"${packages}/User/SublimeSettings/linux-terminal.sh\" \"${packages}/User/SublimeSettings/launch-wrapper.sh\" \"/var/tmp/SublimeBuild/${file_base_name}.out\"",
             }
          }
      ]

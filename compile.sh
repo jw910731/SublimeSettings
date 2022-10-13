@@ -38,10 +38,15 @@ args+=("$1")
 #If system is OSX => use gcc instead of clang
 if [[ $OSTYPE == 'darwin'* ]];then 
 	# Use homebrew gcc to assert compile result
-    cmd='/usr/local/Cellar/gcc/*/bin/g++-*'
+	if [[ -d "/usr/local/Cellar/gcc" ]] > /dev/null; then
+    	brew="/usr/local/bin"
+	elif [[ -d "/opt/homebrew/Cellar/gcc" ]] > /dev/null; then
+		brew="/opt/homebrew/bin"
+	fi
+	cmd=`find $brew -name "g++-*"`
 else
 	cmd='g++'
 fi
 #Execute compile command
-command $cmd "${args[@]/#}"
+command "$cmd" "${args[@]/#}"
 exit
